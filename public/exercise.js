@@ -1,20 +1,20 @@
-const workoutTypeSelect = document.querySelector("#type");
-const cardioForm = document.querySelector(".cardio-form");
-const resistanceForm = document.querySelector(".resistance-form");
-const cardioNameInput = document.querySelector("#cardio-name");
-const nameInput = document.querySelector("#name");
-const weightInput = document.querySelector("#weight");
-const setsInput = document.querySelector("#sets");
-const repsInput = document.querySelector("#reps");
-const durationInput = document.querySelector("#duration");
+const workoutTypeSelect       = document.querySelector("#type");
+const cardioForm              = document.querySelector(".cardio-form");
+const resistanceForm          = document.querySelector(".resistance-form");
+const cardioNameInput         = document.querySelector("#cardio-name");
+const nameInput               = document.querySelector("#name");
+const weightInput             = document.querySelector("#weight");
+const setsInput               = document.querySelector("#sets");
+const repsInput               = document.querySelector("#reps");
+const durationInput           = document.querySelector("#duration");
 const resistanceDurationInput = document.querySelector("#resistance-duration");
-const distanceInput = document.querySelector("#distance");
-const completeButton = document.querySelector("button.complete");
-const addButton = document.querySelector("button.add-another");
-const toast = document.querySelector("#toast");
-const newWorkout = document.querySelector(".new-workout")
+const distanceInput           = document.querySelector("#distance");
+const completeButton          = document.querySelector("button.complete");
+const addButton               = document.querySelector("button.add-another");
+const toast                   = document.querySelector("#toast");
+const newWorkout              = document.querySelector(".new-workout")
 
-let workoutType = null;
+let workoutType        = null;
 let shouldNavigateAway = false;
 
 async function initExercise() {
@@ -101,16 +101,16 @@ async function handleFormSubmit(event) {
   let workoutData = {};
 
   if (workoutType === "cardio") {
-    workoutData.type = "cardio";
-    workoutData.name = cardioNameInput.value.trim();
+    workoutData.type     = "cardio";
+    workoutData.name     = cardioNameInput.value.trim();
     workoutData.distance = Number(distanceInput.value.trim());
     workoutData.duration = Number(durationInput.value.trim());
   } else if (workoutType === "resistance") {
-    workoutData.type = "resistance";
-    workoutData.name = nameInput.value.trim();
-    workoutData.weight = Number(weightInput.value.trim());
-    workoutData.sets = Number(setsInput.value.trim());
-    workoutData.reps = Number(repsInput.value.trim());
+    workoutData.type     = "resistance";
+    workoutData.name     = nameInput.value.trim();
+    workoutData.weight   = Number(weightInput.value.trim());
+    workoutData.sets     = Number(setsInput.value.trim());
+    workoutData.reps     = Number(repsInput.value.trim());
     workoutData.duration = Number(resistanceDurationInput.value.trim());
   }
 
@@ -127,14 +127,14 @@ function handleToastAnimationEnd() {
 }
 
 function clearInputs() {
-  cardioNameInput.value = "";
-  nameInput.value = "";
-  setsInput.value = "";
-  distanceInput.value = "";
-  durationInput.value = "";
-  repsInput.value = "";
+  cardioNameInput.value         = "";
+  nameInput.value               = "";
+  setsInput.value               = "";
+  distanceInput.value           = "";
+  durationInput.value           = "";
+  repsInput.value               = "";
   resistanceDurationInput.value = "";
-  weightInput.value = "";
+  weightInput.value             = "";
 }
 
 if (workoutTypeSelect) {

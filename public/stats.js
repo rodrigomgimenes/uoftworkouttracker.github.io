@@ -40,8 +40,8 @@ function populateChart(data) {
   const colors = generatePalette();
 
   let line = document.querySelector("#canvas").getContext("2d");
-  let bar = document.querySelector("#canvas2").getContext("2d");
-  let pie = document.querySelector("#canvas3").getContext("2d");
+  let bar  = document.querySelector("#canvas2").getContext("2d");
+  let pie  = document.querySelector("#canvas3").getContext("2d");
   let pie2 = document.querySelector("#canvas4").getContext("2d");
 
   let lineChart = new Chart(line, {

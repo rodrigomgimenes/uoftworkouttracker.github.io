@@ -23,8 +23,8 @@ function tallyExercises(exercises) {
   const tallied = exercises.reduce((acc, curr) => {
     if (curr.type === "resistance") {
       acc.totalWeight = (acc.totalWeight || 0) + curr.weight;
-      acc.totalSets = (acc.totalSets || 0) + curr.sets;
-      acc.totalReps = (acc.totalReps || 0) + curr.reps;
+      acc.totalSets   = (acc.totalSets || 0) + curr.sets;
+      acc.totalReps   = (acc.totalReps || 0) + curr.reps;
     } else if (curr.type === "cardio") {
       acc.totalDistance = (acc.totalDistance || 0) + curr.distance;
     }
@@ -58,11 +58,11 @@ function renderWorkoutSummary(summary) {
   };
 
   Object.keys(summary).forEach(key => {
-    const p = document.createElement("p");
+    const p      = document.createElement("p");
     const strong = document.createElement("strong");
 
     strong.textContent = workoutKeyMap[key];
-    const textNode = document.createTextNode(`: ${summary[key]}`);
+    const textNode     = document.createTextNode(`: ${summary[key]}`);
 
     p.appendChild(strong);
     p.appendChild(textNode);
@@ -72,9 +72,9 @@ function renderWorkoutSummary(summary) {
 }
 
 function renderNoWorkoutText() {
-  const container = document.querySelector(".workout-stats");
-  const p = document.createElement("p");
-  const strong = document.createElement("strong");
+  const container    = document.querySelector(".workout-stats");
+  const p            = document.createElement("p");
+  const strong       = document.createElement("strong");
   strong.textContent = "You have not created a workout yet!"
 
   p.appendChild(strong);

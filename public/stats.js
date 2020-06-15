@@ -35,9 +35,9 @@ API.getWorkoutsInRange()
   }
 function populateChart(data) {
   let durations = duration(data);
-  let pounds = calculateTotalWeight(data);
-  let workouts = workoutNames(data);
-  const colors = generatePalette();
+  let pounds    = calculateTotalWeight(data);
+  let workouts  = workoutNames(data);
+  const colors  = generatePalette();
 
   let line = document.querySelector("#canvas").getContext("2d");
   let bar  = document.querySelector("#canvas2").getContext("2d");
